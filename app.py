@@ -32,7 +32,7 @@ import wandb
 
 app = Flask(__name__)
 CORS(app)
-print('--> Starting DALL-E Server. This might take up to two minutes.')
+print('--> Starting AI Engine. This might take up a couple of minutes.')
 
 # dalle-mini
 DALLE_MODEL = "dalle-mini/dalle-mini/model-mheh9e55:latest"  # can be wandb artifact or 🤗 Hub or local folder or google bucket
@@ -146,7 +146,7 @@ def health_check():
 
 with app.app_context():
     generate_images("warm-up", 1)
-    print('--> DALL-E Server is up and running!')
+    print('--> AI Engine is up and running!')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(sys.argv[1]), debug=False)
